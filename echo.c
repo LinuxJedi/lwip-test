@@ -64,6 +64,8 @@ static err_t echo_msgaccept(void *arg, struct tcp_pcb *pcb, err_t err)
     /* Accepted new connection */
     LWIP_PLATFORM_DIAG(("echo_msgaccept called\n"));
 
+    printf("Connect from: %s port: %d\n", ipaddr_ntoa(&(pcb->remote_ip)), pcb->remote_port);
+
     /* Set an arbitrary pointer for callbacks. */
     //tcp_arg(pcb, esm);
 
